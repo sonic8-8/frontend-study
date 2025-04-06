@@ -99,3 +99,10 @@ default는 box-sizing: content-box임
     bottom: 30px;
     height: 200px;
 }
+
+/* 셀렉터 문법
+특정 속성을 갖는 것만 선택 */
+
+input[type=text] {
+    padding: 10px;
+}

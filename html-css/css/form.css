@@ -1,0 +1,50 @@
+div, input, text, textarea {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.form-background {
+    background: gray;
+    width: 100%;
+    height: 1000px;
+    padding: 10px;
+}
+
+.form-white {
+    background: white;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    float: left;
+    width: 50%;
+}
+
+.form-button {
+    background: goldenrod;
+    padding: 10px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    width: 150px;
+    margin-right: 0px;
+    float: right;
+}
