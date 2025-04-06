@@ -40,3 +40,27 @@
 .post-main {
     clear: both;
 }
+
+/* 네비게이션 바 */
+
+/* .navbar li {}
+셀렉터 문법 공백
+이렇게 설정해주면 navbar 클래스 안에 있는 모든 li 태그 자손을 선택할 수 있음 */
+
+/* .navbar > li {}
+셀렉터 문법 꺽쇠괄호
+이렇게 설정해주면 navbar 클래스가 붙어있는 태그의 바로 직속 자손의 li 태그 자손만 선택할 수 있음 */
+
+.navbar li {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    background: aliceblue;
+}
+
+.navbar a {
+    font-size: 16px;
+    text-decoration: none;
+}

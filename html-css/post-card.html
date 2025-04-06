@@ -8,6 +8,19 @@
 </head>
 
 <body>
+
+    <!-- nav 태그는 div 태그와 기능은 똑같음 구조를 표현하기 위해서 이름이 다른것
+    이외에도 section이나 footer 이런것들도 같음 -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">영화</a></li>
+            <li><a href="#">맛집</a></li>
+            <li><a href="#">IT</a></li>
+            <li><a href="#">컴퓨터</a></li>
+        </ul>
+    </nav>
+
+
     <div class="post-card">
         <div class="post-content">
             <div class="post-profile-wrapper">
@@ -17,6 +30,19 @@
                     <p class="post-time">작성 시간</p>
                 </div>
             </div>
+
+            <!-- 
+            [문제]
+            post-main 부분에 margin-top: 10px 을 줘도 변화가 없음 
+            100px 정도로 크게 해줘야 변화가 생기는 문제
+            [이유]
+            post-content가 float로 띄워져있기 떄문에 그 다음 요소에는 clear: both 속성을 줘야함
+            [해결 방법]
+            임의로 div 태그를 하나 추가해서 여기에 clear: both 속성을 주고
+            post-main에 margin-top: 10px을 주면 정상적으로 동작함 
+            -->
+            <div style="clear: both"></div>
+
             <div class="post-main">
                 <h4 class="post-title">블로그 제목</h4>
                 <p class="post-summary">블로그 내용</p>
