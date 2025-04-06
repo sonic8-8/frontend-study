@@ -1,0 +1,42 @@
+.post-card {
+    width: 800px;
+    height: 300px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-content {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.profile-image {
+    display: block;
+    width: 50px;
+    float: left;
+}
+
+.post-author {
+    margin: 8px;
+}
+
+.post-time {
+    margin: 8px;
+}
+
+.post-profile {
+    display: block;
+    float: left;
+}
+
+.post-thumbnail {
+    width: 30%;
+    height: 100%;
+    float:left;
+}
+
+.post-main {
+    clear: both;
+}
