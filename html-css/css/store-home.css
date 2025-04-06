@@ -6,22 +6,96 @@
     background-repeat: no-repeat;
     background-position: center;
     /* filter:brightness(70%); */
+    text-align: center;
+    padding: 1px;
 }
 
 .main-title {
     color: white;
     font-size: 30px;
-    /* margin-top: 300px; */
+    margin-top: 100px;
 }
 
-/* margin collapser 현상
+/* margin collapse 현상
 테두리가 겹치는 경우 둘 중 더 큰 margin 하나만 적용 
 [해결 방법]
 테두리를 만나지 않게 해주면 됨
+예를 들어, 부모 태그에 padding: 1px을 줘서 테두리가 만나지 않게 하는식
 */
 
 .main-content {
     color:aliceblue;
     font-size: 20px;
     text-align: center;
+}
+
+/* 좌표 이동
+position: relative
+내 원래 위치가 기준
+여기에 left: 100px, bottom:100px 이런식으로 속성을 넣을 수 있습니다
+
+position: static
+기준이 없음
+그래서 좌표 이동을 못합니다
+
+position: fixed
+브라우저 창(viewport)이 기준
+상단 고정 메뉴 같은 거 만들고 싶을 때 사용
+
+position: absolute
+부모가 기준
+정확히는 position: relative 속성을 가진 부모 태그
+
+그리고 position 속성을 써주면 공중에 뜬다는 특징도 있음
+그러면 다른 요소랑 겹치게하면서 띄울 수 있겠죠 */
+
+.main-button {
+    padding: 15px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    position:relative;
+    top: 100px;
+}
+
+/* z-index
+요소끼리 겹쳤을때 뭘 앞에 놓을지 결정하고 싶으면 사용하세요
+높을 수록 앞에 옴 */
+
+/* max-width
+width를 %로 설정했을때 모바일 환경에선 괜찮은데 브라우저면 너무 커질 수 있습니다
+width: 80% 뭐 이런식으로 했을때 문제가 발생하겠죠
+이럴때 max-width: 800px;
+이런식으로 속성을 주면 최대 늘어나는 크기에 제한이 생깁니다
+
+(참고)
+width는 content 영역의 너비를 의미합니다
+그래서 문제가 발생함
+
+[문제]
+width를 생각할때 padding, border 이런거 빼야한다는 것임
+똑같은 요소가 있고 width: 300px 으로 설정했다고 합시다
+근데 이 중에서 하나만 padding: 10px 을 주면 
+padding 속성 준 곳이 더 크다는 말임
+그래서 어떻게 해결하면 되느냐
+
+[해결 방법]
+box-sizing: border-box 속성을 사용해주면 padding, border 포함해서 width를 계산해줍니다
+default는 box-sizing: content-box임
+
+[결론]
+처음에 box-sizing: border-box 해두고 시작하면 좋습니다
+그리고 브라우저마다 호환성이 다를 수 있어서 이런거 보정해주는 normalize.css 같은 것도 있음 */
+
+
+.detail {
+    width: 500px;
+    background: #eee;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+    height: 200px;
 }
