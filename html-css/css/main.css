@@ -1,0 +1,87 @@
+.profile {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+}
+
+.box {
+    background-color: cadetblue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    
+    /* div 태그는 기본적으로 block임
+    가로행을 전부 차지하는 게 block */
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 일부 스타일은 자동으로 자식 태그에게 상속됨 */
+    /* font-size, font-family, color 같은 한 번에 부모 태그에서 한 번에 변경하면 좋은 것들이 보통 상속됨 */
+    font-size: 20px;
+    color: white;
+
+    text-align: center;
+
+    box-shadow: 10px 10px 10px 1px black;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+}
+
+.header {
+    width: 100%;
+    height: 20%;
+    background:coral;
+}
+
+/* float 속성을 사용하면 요소가 붕 띄워진다 */
+/* 참고로 %는 부모 요소 대비해서 어느정도인지를 말함 */
+.left-menu {
+    width: 20%;
+    height:400px;
+    background: cornflowerblue;
+    /* float: left; */
+
+    /* inline-block을 사용해서 요소를 정렬할 수도 있음
+    요소의 크기만큼만 자리를 차지하게 해주기 때문인데
+    단점이 있음
+    1. html 요소끼리 붙여야 정렬처럼 배치할 수 있는데 이러면 가독성이 떨어짐 
+    2. text를 입력할 경우 baseline 위에 텍스트가 입력되는데 inline block이 옆에 있을 경우 
+    baseline을 기준으로 요소를 옆에 가져오려고 함 그래서 배치가 이상해지구요
+    이 문제를 해결하려면 vertical-align: top 속성 넣어주면 됨 
+    결론: inline-block 사용할거면 차라리 float 사용하셈 */
+    display: inline-block;
+}
+
+.right-menu {
+    width: 80%;
+    height: 400px;
+    background: cadetblue;
+    /* float: right; */
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* float가 적용된 요소 다음에 오는 것들이 float에 영향을 받지 않으려면 clear 해주면 되는데
+float를 어느 방향으로 줬는지에 따라서 left, right 주면 됨
+근데 만약 헷갈리면 둘 다 주면 된다. both로 하면 해결임 */
+.footer {
+    width: 100%;
+    height: 100px;
+    background: gray;
+    clear: both;
+}
