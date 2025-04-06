@@ -1,0 +1,66 @@
+/* table은 기본적으로 틈이 존재하는데
+border-collapse: collpase 속성을 주면 틈을 없앨 수 있음 */
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    /* border: 1px solid black; */
+    vertical-align: middle;
+}
+
+body {
+    margin: 0px;
+}
+
+.cart {
+    background: rgb(132, 170, 185);
+    padding: 30px;
+    width: 700px;
+    height: 400px;
+    margin: auto;
+}
+
+.cart-title {
+    color:rgb(13, 0, 128);
+}
+
+.cart-main {
+    background: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.cart-table {
+    width: 100%;
+}
+
+
+.cart-table-tr {
+    border:1px solid rgb(13, 0, 128);
+}
+
+.cart-table-td-img {
+    float: left;
+}
+
+.cart-table-td-title {
+    float: left;
+}
+
+.cart-button {
+    padding: 20px;
+    background: rgba(25, 33, 78, 0.897);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
+/* .cart-table td:nth-child(2) {}
+여러 요소 중 2번째 요소에만 스타일을 주고 싶을 때 사용 */
+
+/* <td colspan="4"></td>
+colspan을 사용하면
+셀 합치기가 가능함 */

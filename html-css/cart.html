@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="./css/cart.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- vertical-align 용도
+    1. inline / inline-block 요소 간의 세로 정렬에 사용
+    2. table 안 요소들의 세로 정렬에 사용됨 -->
+    <div>
+        <p style="font-size: 50px"> 
+            <span style="vertical-align: middle">테스트</span> <span style="font-size: 20px; vertical-align: middle">test</span>
+        </p>
+    </div>
+
+    <div> <span style="vertical-align: middle"><img src="https://mdn.mozillademos.org/files/12245/frame_image.svg" width="32" height="32"></span> <span style="vertical-align: middle">image with a default alignment.</span></div>
+
+    <!-- <div>로 표 만들기
+    display: table 속성을 주면 되는데 굳이 사용할 필요가 없음 -->
+
+    <div class="cart">
+        <div class="cart-title">
+            <h2>Your shopping cart</h2>
+        </div>
+        <div class="cart-main">
+            <table class="cart-table">
+                <thead>
+                    <tr class="cart-table-tr">
+                        <th>ITEM</th>
+                        <th>AMOUNT</th>
+                        <th>PRICE</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-table-tr">
+                        <td>
+                            <div class="cart-table-td-img">
+                                <img src="#">
+                            </div>
+                            <div class="cart-table-td-title">
+                                <h4>SONY</h4>
+                                <p>FE 70-200mm F2.8 GM OSS</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1979.00</td>
+                        <td>1979.00</td>
+                    </tr>
+                    <tr class="cart-table-tr">
+                        <td>
+                            <div class="cart-table-td-img">
+                                <img src="#">
+                            </div>
+                            <div class="cart-table-td-title">
+                                <h4>SONY</h4>
+                                <p>Sonnar T E 24mm F1.8 ZA</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>989.00</td>
+                        <td>989.00</td>
+                    </tr>
+                    <tr class="cart-table-tr">
+                        <td colspan="4">2968.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-bottom">
+            <a href="#">Edit your shopping cart</a>
+            <button class="cart-button">Choose payment method</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
