@@ -5,7 +5,6 @@ width: 2em 내 폰트 사이즈의 2배
 width: 50vw 브라우저 현재 창의 width
 width: 50vh 브라우저 현재 창의 height */
 
-
 .test-container {
     width: 100%;
     background: aquamarine;
@@ -23,6 +22,22 @@ width: 50vh 브라우저 현재 창의 height */
 
 .item {
     width: 25%;
+}
+
+/* pseudo-element를 이용해서 디자인 한 예시임 */
+progress {
+    appearance: none;
+    background: white;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: green;
+    border-radius: 5px;
 }
 
 /* CSS 파일 맨밑에 미디어 쿼리 문법을 적용해서 반응형 레이아웃을 구현할 수 있음 */
