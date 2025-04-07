@@ -1,0 +1,73 @@
+/* 단위 정리
+width: 16px 기본 단위
+width: 1rem 기본 폰트 사이즈의 1배
+width: 2em 내 폰트 사이즈의 2배
+width: 50vw 브라우저 현재 창의 width
+width: 50vh 브라우저 현재 창의 height */
+
+
+.test-container {
+    width: 100%;
+    background: aquamarine;
+}
+
+.item-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    background: whitesmoke;
+}
+
+.item {
+    width: 25%;
+}
+
+/* CSS 파일 맨밑에 미디어 쿼리 문법을 적용해서 반응형 레이아웃을 구현할 수 있음 */
+
+/* 
+참고로 max-width 안에 넣는 브라우저 폭을 breakpoint라고 하고
+기본적으로 권장하는 단위를 사용하면됨 
+1200px 이하는 태블릿
+768px 이하는 모바일
+이런식입니다
+*/
+@media screen and (max-width: 1200px) {
+    .test-title {
+        font-size: 30px;
+    }
+    .test-content {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .test-title {
+        font-size: 20px;
+    }
+    .test-content {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .item-container {
+        flex-wrap: wrap;
+    }
+
+    .item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .item-container {
+        flex: wrap;
+    }
+
+    .item {
+        width: 100%;
+    }
+}
