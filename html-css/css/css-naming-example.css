@@ -2,8 +2,20 @@
 Object-Oriented-CSS (OOCSS)
 css에 적용할 클래스들을 미리 만들어놓는 관습으로 CSS 양을 줄이고 협업에 도움이 됨
 이런 방식을 유틸리티 클래스라고 합니다
-bootstrap, tailwind css 같은 것들임
+bootstrap 같은 것임
  */
+
+/* [Tailwind CSS도 OOCSS인가?]
+-> 아님!
+Utility first CSS나 Atomic CSS에 가깝습니다
+이게 무슨 말이냐면
+모든 스타일을 유틸리티 클래스로 만들어두고 
+HTML에서 이 클래스들을 조합해서 사용하는 방식을 말함 */
+
+/* [아이콘 라이브러리]
+Tailwind CSS만 사용할 경우 Heroicons를 세트로 사용하고
+shadcn/ui를 사용할 경우 Lucide를 기본 아이콘 라이브러리로 사용함
+Font Awesome은 React + Tailwind 기반 프로젝트에서는 점점 덜 사용되어가는 추세 */
 
 .main-btn {
     padding: 10px;

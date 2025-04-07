@@ -86,3 +86,24 @@ progress::-webkit-progress-value {
         width: 100%;
     }
 }
+
+/* [css 덮어쓰기 원리]
+
+밑에 있을 수록 우선순위가 적용됩니다
+.custom {
+    background: blakc;
+}
+
+.custom {
+    background: red;
+}
+
+빨간색이 배경으로 적용되겠죠
+근데 이게 안먹힐때가 있음
+그럴때 생각해볼 수 있는게 우선순위 점수 높이는 건데
+
+div.custom {}
+
+이런식으로 태그들을 추가하는건데 
+이런식으로 하면 유지보수하기 어려워지겠죠
+참고삼아 알아둡시다 */
