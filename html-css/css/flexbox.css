@@ -1,0 +1,59 @@
+/* 
+flex box를 사용하면 매우 쉽게 가로 배치가 가능해짐
+[특징]
+가로세로정렬을 쉽게 구현할 수 있음
+
+[방법]
+부모 태그에 display: flex 속성을 주면 자식 태그들이 row 방향으로 배치됨
+여기서 justify-content: center 속성을 주면 가로 가운데 정렬이 적용되는식
+
+자식 태그를 상하 정렬하고 싶다면?
+align-itmes: center 속성 주면 됨
+
+만약 배치 방향을 바꾸고 싶다면?
+flex-direction: column 속성을 주면 세로로 배치됨
+
+요소 설정 크기가 창을 벗어나면 다음 줄로 내리고 싶을땐?
+flex-wrap: wrap 속성을 사용하면 됨
+부모 요소 안에 요소가 다 못들어가면 다음 칸으로 내려주는 방식
+
+비율 별로 자식 태그를 다르게 설정하고 싶다면?
+flex-grow: 2 속성을 적용해줍시다
+그럼 해당 속성을 준 자식 태그만 2의 비율을 갖게됨
+기본값은 1이기 때문에 2배가 된다는 것임
+
+*/
+
+.flex-container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-grow: 2;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: gray;
+}
+
+.navbar {
+    background: cadetblue;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+
+.navbar-menu {
+    margin-right: 10px;
+}
+
+.navbar-logo {
+    flex-grow: 2;
+    margin-left: 10px;
+}
