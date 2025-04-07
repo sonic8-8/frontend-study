@@ -56,6 +56,7 @@ body {
     border: none;
     border-radius: 5px;
     float: right;
+    cursor: pointer;
 }
 
 /* .cart-table td:nth-child(2) {}
@@ -64,3 +65,39 @@ body {
 /* <td colspan="4"></td>
 colspan을 사용하면
 셀 합치기가 가능함 */
+
+/* -------------------------------------------------------------- */
+
+/* 
+pseudo-class 셀렉터를 사용하면 인터랙티브한 디자인을 적용할 수 있다 
+[방법]
+클래스명:()
+
+아래처럼 디자인 할 수 있다
+버튼에 커서를 올리면 바뀐다든지, 색이 변화한다든지 이런 것들이 가능해짐
+근데 hover, focus, active 다 넣을거면 hofa 순으로 등록해놔야 잘 동작함
+*/
+
+.cart-button:hover {
+    background: rgba(59, 75, 167, 0.897);
+}
+
+.cart-button:focus {
+    background: gray;
+}
+
+.cart-button:active {
+    background: rgb(80, 150, 255);
+}
+
+.custom-link {
+    text-decoration: none;
+}
+
+.custom-link:link {
+    color: violet;
+}
+
+.custom-link:visited {
+    color: black;
+}
