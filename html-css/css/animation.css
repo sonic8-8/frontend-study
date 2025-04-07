@@ -1,0 +1,71 @@
+.shop-bg {
+    background: #eee;
+    padding: 20px;
+}
+
+.shop-container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.shop-item {
+    width: 33%;
+    padding: 10px;
+}
+
+.shop-item img {
+    width: 100%;
+    display: block;
+}
+
+.animation-box {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.slide-up-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-up {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    margin-top: 100%;
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.slide-up-wrapper:hover .slide-up {
+    margin-top: 50%;
+    opacity: 1;
+}
+
+/* [애니메이션 만드는 방법]
+1.시작스타일 만들기
+2.최종스타일 만들기
+3.언제 최종스타일로 변할지 설정
+4.transition으로 애니메이션 */
+
+/* [개발자 도구로 애니메이션 동작 방식 알아내기]
+개발자 도구에서 점 3개 누르고 more tools를 살펴보면
+animations가 있습니다
+이 도구 활성화하고 애니메이션이 적용된 요소를 눌러보면
+어떤 애니메이션이 적용된건지 확인할 수 있음 */
