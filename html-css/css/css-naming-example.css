@@ -1,0 +1,32 @@
+/* 
+Object-Oriented-CSS (OOCSS)
+css에 적용할 클래스들을 미리 만들어놓는 관습으로 CSS 양을 줄이고 협업에 도움이 됨
+이런 방식을 유틸리티 클래스라고 합니다
+bootstrap, tailwind css 같은 것들임
+ */
+
+.main-btn {
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+.bg-red {
+    background: red;
+    color: white;
+}
+
+.bg-blue {
+    background: blue;
+    color: white;
+}
+
+/* Block__Element--Modifier (BEM)
+덩어리__역할--세부사항
+
+클래스명 지을때 고민하지말고 이 룰을 따르라고 만들어놓은 것인데
+사실 세부사항까지 넣어서 클래스로 만드는 건 별로고
+profile-title
+이런식으로 덩어리-역할로 끝내는게 나음 */
