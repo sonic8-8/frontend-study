@@ -1,0 +1,149 @@
+.transform-example {
+    transform: scale(1);
+    text-align: center;
+}
+
+.transform-example:hover {
+    animation-name: 왔다갔다;
+    animation-duration: 1s;
+}
+
+.shake {
+    text-align: center;
+}
+
+.shake:hover {
+    animation-name: 흔들버튼;
+    animation-duration: 1s;
+}
+
+.rotate {
+    text-align: center;
+    font-size: 70px;
+}
+
+.rotate:hover {
+    animation-name: 회전확대;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.slide {
+    background: black;
+    color: white;
+    width: 300px;
+    height: 100%;
+    padding: 25px;
+    text-align: right;
+    z-index: 5;
+    transform: translateX(-250px);
+    transition: all 1s;
+}
+
+.slide:hover {
+    transform: translateX(0px);
+    text-align: center;
+}
+
+.slide:hover p {
+    animation-name: 글자슬라이드;
+    animation-duration: 1s;
+}
+
+/* transition은 한 방향 애니메이션만 가능합니다
+그럼 여기저기 왔다갔다하는 복잡한 애니메이션은 어떻게 만들것임?
+
+방법은 @keyframes를 사용하는 것입니다 */
+
+@keyframes 왔다갔다 {
+    0% {
+        transform: translateX(0px);
+    }s
+
+    50% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+/* 이렇게 @Keyframes로 애니메이션 만들고 이름도 붙이고나서
+적용하고 싶은 태그에 animation-name: 만든 애니메이션 이름
+이렇게 속성주면 됩니다
+
+구현 다음은 성능, 확장성을 생각해야함
+transform은 성능이 좋습니다
+이 애니메이션을 margin-left, margin-right 같은걸로 구현할 수 있겠지만
+transform을 사용하는 이유는 성능입니다
+
+2가지 이유가 있음
+
+[1번]
+브라우저가 그림 그리는 순서
+1. Render Tree 만들기 (CSS 정리한 자료)
+2. Layout 잡기 (width, height, margin, padding 등)
+3. Paint 하기 (backgroun 등)
+4. Composite 처리 (transform, opacity 등)
+
+2번을 변경하면 3번, 4번도 다시 렌더링해야합니다
+transform은 4번이니까 4번만 렌더링하면 됨
+
+[2번]
+원래 웹브라우저는 쓰레드를 1개만 사용하는데
+자바스크립트 실행, HTML CSS처리 이런걸 혼자서 한다는것임
+근데 transform은 이 자바스크립트가 사용하는 쓰레드가 아닌
+다른 쓰레드에서 처리해줍니다
+핵심 기능을 수행하는 쓰레드에 부담을 주지 않는다는 것임
+이러면 성능이 좋겠죠 */
+
+@keyframes 흔들버튼 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes 회전확대 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: scale(2) rotate(30deg);
+    }
+}
+
+@keyframes 글자슬라이드 {
+    0% {
+        transform: translateX(-450px);
+    }
+
+    50% {
+        transform: translateX(50px) skewX(-30deg);
+    }
+
+    100% {
+        transform: translateX(0deg);
+    }
+}
