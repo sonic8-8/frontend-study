@@ -1,0 +1,21 @@
+.container {
+    background: lightgray;
+    height: 2000px;
+    margin-top: 500px;
+}
+
+.text {
+    float: left;
+    width: 300px;
+}
+
+.image {
+    float: right;
+    width: 400px;
+    position: sticky;
+    top: 100px;
+}
+
+/* stikcy를 사용할 수 있는 조건
+1. 스크롤 할 수 있는 부모 박스가 있어야함
+2. top같은 좌표 속성을 함께 서야함 */
