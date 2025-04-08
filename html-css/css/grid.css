@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-template-areas: 
+    "헤더 헤더 헤더 헤더"
+    "사이드 . . ."
+    "사이드 . . ."
+    "사이드 . . .";
+}
+
+/* px 말고 fr을 사용할 수도 있음
+배율을 의미합니다 */
+
+.grid-container div {
+    border: 1px solid black;
+}
+
+.grid-nav {
+    grid-area: 헤더;
+}
+
+.grid-sidebar {
+    grid-area: 사이드;
+}
+
+/* grid-column: 1 / 5;
+선을 기준으로 1번째부터 5번째 선까지를 차지하게 하는 속성
+자식 태그에 넣어주면 됨 */
+
+/* grid-area: 이름
+자식 태그들에 grid-area로 이름을 지어주고
+부모 태그에서 색칠놀이하듯 "이름 이름 이름"
+이런식으로 적용 가능합니다
+근데 테트리스 모양 같은건 안되고 
+꼭 네모여야 정상적으로 동작함 */
