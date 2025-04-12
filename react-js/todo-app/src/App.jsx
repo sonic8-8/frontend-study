@@ -2,8 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import Editor from './components/Editor'
 import List from './components/List'
-import { useState } from 'react'
-import { useRef } from 'react'
+import { useState, useRef, useReducer } from 'react'
 import Exam from './components/Exam'
 
 const mockData = [
@@ -27,38 +26,60 @@ const mockData = [
   },
 ];
 
+function reducer(todos, action) {
+  switch (action.type) {
+    case "CREATE":
+      return [action.data, ...todos];
+    case "UPDATE":
+      return todos.map((todo) =>
+        todo.id === action.targetId ? { ...todo, isDone: !todo.isDone } : todo
+      );
+    case "DELETE":
+      return todos.filter((todo) =>
+        todo.id !== action.targetId
+      )
+    default:
+      return todos;
+  }
+}
+
 function App() {
-  const [todos, setTodos] = useState(mockData);
+  const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
   const onCreate = (content) => {
-    const newTodo = {
-      id: idRef.current++,
-      isDone: false,
-      content: content,
-      date: new Date().getTime()
-    };
-
-    setTodos([newTodo, ...todos]);
+    dispatch({
+      type: "CREATE",
+      data: {
+        id: idRef.current++,
+        isDone: false,
+        content: content,
+        date: new Date().getTime(),
+      }
+    });
   };
 
   const onUpdate = (targetId) => {
-    setTodos(
-      todos.map((todo) => todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo)
-    );
+    dispatch({
+      type: "UPDATE",
+      targetId: targetId,
+    });
   };
 
   // 삭제하려는 대상의 id와 일치하지 않는 것들만 배열로 만드는 것임
   const onDelete = (targetId) => {
-    setTodos(todos.filter((todo) => todo.id !== targetId));
+    dispatch({
+      type: "DELETE",
+      targetId: targetId,
+    })
   }
 
   return (
     <div className="App">
-      {/* <Header />
+      <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
-      <Exam />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      {/* <Exam /> */}
     </div>
   )
 }
