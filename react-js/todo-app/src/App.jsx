@@ -4,6 +4,7 @@ import Editor from './components/Editor'
 import List from './components/List'
 import { useState } from 'react'
 import { useRef } from 'react'
+import Exam from './components/Exam'
 
 const mockData = [
   {
@@ -54,10 +55,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
-
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
+      <Exam />
     </div>
   )
 }
