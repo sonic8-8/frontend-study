@@ -38,7 +38,7 @@ function reducer(state, action) {
       );
     case "DELETE":
       return state.filter((item) =>
-        item.id !== action.data.id
+        String(item.id) !== String(action.data.id)
       );
     default:
       return state;
@@ -91,7 +91,7 @@ function App() {
   return (
     <>
       <DiaryStateContext.Provider value={data}>
-        <DiaryDispatchContext value={{
+        <DiaryDispatchContext.Provider value={{
           onCreate,
           onUpdate,
           onDelete,
@@ -103,7 +103,7 @@ function App() {
             <Route path="/edit/:id" element={<Edit />} />
             <Route path="*" element={<Notfound />} />
           </Routes>
-        </DiaryDispatchContext>
+        </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
     </>
   )
